@@ -1,0 +1,249 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Quote from '~/components/widgets/Quote.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'BackSpace — Your Space to Put Something Back',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Sign Up',
+        href: '#cta',
+        target: '',
+        // icon: 'tabler:download',
+      },
+      { text: 'Learn more', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'Collaboration for an idea' }}
+  >
+    <Fragment slot="title">
+      Explore the Joy of
+      <span class="text-accent dark:text-white highlight">Building Together</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Backspace</span> unites individuals from across the digital cosmos and physical world
+        to construct, innovate, and shape the future. Whether you’re a beginner or have years of experience, simply post
+        your idea and build it out with like-minded folks.
+      </span>
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">Your Space to Put Something Back</span>
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title='"make something wonderful and put it out there.."'
+    subtitle="The purpose of backspace is to let you work on an idea that you've been putting off for dumb reasons. We wish you to work on your concept with individuals from all around the world and watch it come to life. This is where you may experiment with new ideas and work with others."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Features"
+    title="Why Backspace?"
+    subtitle="Backspace is more than just a platform; it's a driver of student innovation and cooperation. Here's why you should join our thriving community:"
+    items={[
+      {
+        title: 'Idea Sharing',
+        description: 'Post your ideas and projects, inviting collaboration from like-minded peers.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Diverse Community',
+        description: 'Connect with students from diverse backgrounds, disciplines, and expertise levels.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Resource Library',
+        description:
+          'Explore our dedicated page to share resources and discover tools and materials that can elevate your project to new heights.',
+        icon: 'tabler:tools',
+      },
+      {
+        title: 'Build in Public',
+        description:
+          'Share your progress transparently, fostering collaboration and refining your ideas with constructive input from fellow members.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Supportive Environment',
+        description: 'Receive support and guidance from mentors and fellow students throughout your journey.',
+        icon: 'tabler:heart-handshake',
+      },
+      {
+        title: 'Learning Opportunities',
+        description: 'Acquire valuable skills and knowledge by actively working together with fellow students.',
+        icon: 'tabler:notebook',
+      },
+    ]}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="steps"
+    title="Turn Your Dream Project into Reality."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Post Your Idea</span>',
+        description:
+          'Share your vision with the world by posting your idea on Backspace. Provide detailed insights into your concept, outlining your goals, aspirations, and how you envision its execution.',
+        icon: 'tabler:share-2',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Connect with Like-Minded Peeps</em>',
+        description:
+          'Engage with fellow innovators and explore their interest and commitment to collaborating on bringing your project to life. Discuss your vision and ensure it aligns with theirs before moving forward.',
+        icon: 'tabler:affiliate',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Collaborate and Build</span>',
+        description:
+          'Work alongside your peers to bring your idea to life. Enjoy the journey of building together, remembering that the process is just as important as the destination.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">Keep the Momentum Going</span>',
+        description:
+          "Share regular updates on your project's progress, building in public and keeping your audience informed. Let the world see your journey unfold as you continue to update and improve your project.",
+        icon: 'tabler:graph',
+      },
+      {
+        title: 'And liftoff!',
+        icon: 'tabler:rocket',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/steps.png',
+      alt: 'Steps image',
+    }}
+  />
+
+  <!-- Quote Widget ******************* -->
+
+  <Quote id="quote" />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    id="faq"
+    title="Frequently Asked Questions"
+    subtitle="Dive into the following questions to gain insights into the the 'Backspace'."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'When will your platform be available for use?',
+        description:
+          "We're currently in development and working hard to bring you the best experience possible. Stay tuned for updates on our launch date!",
+      },
+      {
+        title: 'What exactly is Backspace?',
+        description:
+          "It's like tinder but for ideas. Simply post your idea and get like-minded people to work on it.",
+      },
+      {
+        title: 'Is your platform free to use?',
+        description:
+          'Yes, our platform will be free to use for all students. We believe in making innovation and collaboration accessible to everyone.',
+      },
+      {
+        title: 'I have more questions. How can I get in touch?',
+        description:
+          "Feel free to reach out to us on heybackspaces@gmail.com. We're here to help and answer any questions you may have!",
+      },
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    id="cta"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get template',
+        href: 'https://github.com/onwidget/astrowind',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="sm:whitespace-nowrap">Be the First to Try Our Platform!</span>
+    </Fragment>
+
+    <Fragment slot="subtitle"></Fragment>
+    <Fragment slot="tagline"> Sign up now for early access. </Fragment>
+  </CallToAction>
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Let us know how you can help"
+    subtitle="Send us a mail to heybackspaces@gmail.com and let us know how you can contribute. We're excited to hear from you and work together to turn ideas into reality!"
+    columns={4}
+    items={[
+      {
+        title: '',
+        icon: '',
+        callToAction: {
+          target: '_blank',
+          text: '',
+          href: '/',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Email',
+        icon: 'tabler:mail',
+        callToAction: {
+          target: '_blank',
+          text: 'Write to us',
+          href: 'mailto: heybackspaces@gmail.com',
+          variant: 'link',
+        },
+      },
+      {
+        title: 'Join our discord',
+        icon: 'tabler:message-circle',
+        callToAction: {
+          target: '_blank',
+          text: 'Start chatting',
+          href: 'https://discord.gg/ex2UmYq6Yx',
+          variant: 'link',
+        },
+      },
+      {},
+    ]}
+  />
+</Layout>
